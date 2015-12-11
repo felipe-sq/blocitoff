@@ -8,6 +8,9 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
+*.sqlite3
+.DS_Store
+/log/
 
 ## Specific to RubyMotion:
 .dat*
