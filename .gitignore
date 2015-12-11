@@ -10,6 +10,7 @@
 /tmp/
 *.sqlite3
 .DS_Store
+/log/
 
 ## Specific to RubyMotion:
 .dat*
