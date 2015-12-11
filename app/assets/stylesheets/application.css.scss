@@ -13,8 +13,12 @@
  *= require_tree .
  *= require_self
  */
-// @import "bootstrap-sprockets";
-// @import "bootstrap";
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+.left-spacing {
+  margin-left: 15px;
+}
 
 .user-info {
   margin-top: 9px;
