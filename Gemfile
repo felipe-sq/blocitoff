@@ -30,3 +30,5 @@ gem 'devise'
 gem 'bootstrap-sass'
 
 gem 'pg'
+
+gem 'figaro', '1.0'
