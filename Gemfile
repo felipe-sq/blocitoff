@@ -8,6 +8,7 @@ group :production do
 end
 
 group :development do
+  gem 'rails_layout'
 end
 
 group :development, :test do
