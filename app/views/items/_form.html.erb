@@ -3,14 +3,14 @@
     <div class="alert alert-danger">
       <h4><%= pluralize(item.errors.count, "error") %>.</h4>
       <ul>
-        <% post.errors.full_messages.each do |msg| %>
+        <% item.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <%= form_group_tag(post.errors[:name]) do %>
+  <%= form_group_tag(item.errors[:name]) do %>
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control', placeholder: "Enter item name" %>
   <% end %>

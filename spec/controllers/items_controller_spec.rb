@@ -1,9 +1,9 @@
 require 'rails_helper'
+include RandomData
 
 RSpec.describe ItemsController, type: :controller do
   describe '#create' do
-    # TODO: Use FactoryGirl
-    let(:user) { User.create(email: 'test@test.com', password: 'foobar11', password_confirmation: 'foobar11') }
+    let(:user) { create(:user) } 
 
     context 'user signed in' do
       before { sign_in user }
