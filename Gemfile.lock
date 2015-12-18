@@ -176,7 +176,7 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 4.1.0)
   devise
-  factory_girl_rails (~> 4.0)
+  factory_girl_rails
   figaro (= 1.0)
   jquery-rails
   pg

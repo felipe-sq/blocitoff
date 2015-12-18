@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.2.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 
@@ -12,8 +12,8 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rspec-rails', "~> 3.0"
-  gem 'factory_girl_rails', '~> 4.0'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
 end
 
 gem 'sass-rails', '~> 5.0'
