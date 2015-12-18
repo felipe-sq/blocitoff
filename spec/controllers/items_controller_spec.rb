@@ -50,7 +50,7 @@ RSpec.describe ItemsController, type: :controller do
     context 'user not signed in' do
       it 'does not create an item' do
         post :create, user_id: user.id, item: {name: 'something'}
-        expect(response).to redirect_to(new_session_path)
+        expect(response).to redirect_to(new_user_session_path)
       end
     end
   end
