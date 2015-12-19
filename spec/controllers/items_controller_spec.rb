@@ -24,7 +24,6 @@ RSpec.describe ItemsController, type: :controller do
 
          end.to \
            change { Item.count }.by(1)
-
       end
 
       it 'redirects to user#show' do

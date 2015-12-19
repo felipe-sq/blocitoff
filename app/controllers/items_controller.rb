@@ -3,7 +3,8 @@ class ItemsController < ApplicationController
   def create
     puts 'am i here?'
     @user = User.find(params[:user_id])
-    @item = Item.create(user_id: @user.id, name: params[:name])
+    @item = @user.items.new(user_id: @user.id, name: params[:name])
+    @item.user = @user
 
     if @item.save!
       p 'did it'
@@ -16,4 +17,9 @@ class ItemsController < ApplicationController
     end
   end
 
+  private
+
+  def item_params
+    params.require(:item).permit(:user_id, :name)
+  end
 end
