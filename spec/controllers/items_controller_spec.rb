@@ -12,18 +12,8 @@ RSpec.describe ItemsController, type: :controller do
         expect(user).to_not be_nil
       end
 
-      #it "should get index" do
-      #  get 'index'
-      #  expect(response).to be_success
-      #end
-
       it 'can create an item' do
-        post :create, user_id: user.id, name: 'something'
-        p response.status
-         expect do
-
-         end.to \
-           change { Item.count }.by(1)
+        expect { post :create, user_id: user.id, item: {name: 'something'} }.to change(Item,:count).by(1)
       end
 
       it 'redirects to user#show' do
@@ -32,8 +22,9 @@ RSpec.describe ItemsController, type: :controller do
       end
 
       it 'should belong to the user' do
-        post :create, user_id: user.id, item: { name: 'something' }
-        expect(assigns(:user_id)).to eq(user.id)
+        post :create, user_id: user.id, item: { user_id: user.id, name: 'something' }
+        p response.status
+        expect(assigns(item: :user_id)).to eq(user.id)
       end
 
 
