@@ -23,8 +23,7 @@ RSpec.describe ItemsController, type: :controller do
 
       it 'should belong to the user' do
         post :create, user_id: user.id, item: { user_id: user.id, name: 'something' }
-        p response.body
-        expect(assigns(Item.last)).to eq(user.id)
+        expect(Item.last.user).to eq(user)
       end
 
 

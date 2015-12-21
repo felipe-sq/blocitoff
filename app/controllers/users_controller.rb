@@ -7,6 +7,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @items = @user.items
+    puts "Current user is #{@user}"
     unless @user == current_user
       redirect_to :back, :alert => "Access denied,"
     end

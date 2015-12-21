@@ -9,7 +9,8 @@
   </div>
 </div>
 <h3>Create a new Item</h3>
-<%= render partial: "items/form", locals: { user: @user, item: @item } %>
+<%= render partial: "items/form", locals: { user: @user, item: Item.new } %>
 <br>
 <h3>Pending Items</h3>
+<%#= render @user.items %>
 <%= render partial: "items/item", locals: { user: @user, item: @item } %>
