@@ -8,9 +8,12 @@ RSpec.describe ItemsController, type: :controller do
     context 'user signed in' do
       before { sign_in user }
 
+      it "should have a user" do
+        expect(user).to_not be_nil
+      end
+
       it 'can create an item' do
-        expect { post :create, user_id: user.id, name: 'something' }.to \
-          change { Item.count }.by(1)
+        expect { post :create, user_id: user.id, item: {name: 'something'} }.to change(Item,:count).by(1)
       end
 
       it 'redirects to user#show' do
@@ -19,8 +22,9 @@ RSpec.describe ItemsController, type: :controller do
       end
 
       it 'should belong to the user' do
-        post :create, user_id: user.id, item: {name: 'something'}
-        expect(assigns(:item)).to eq(user)
+        post :create, user_id: user.id, item: { user_id: user.id, name: 'something' }
+        p response.body
+        expect(assigns(Item.last)).to eq(user.id)
       end
 
 
@@ -36,7 +40,7 @@ RSpec.describe ItemsController, type: :controller do
     context 'user not signed in' do
       it 'does not create an item' do
         post :create, user_id: user.id, item: {name: 'something'}
-        expect(response).to redirect_to(new_session_path)
+        expect(response).to redirect_to(new_user_session_path)
       end
     end
   end

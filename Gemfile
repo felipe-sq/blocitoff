@@ -34,3 +34,5 @@ gem 'bootstrap-sass'
 gem 'pg'
 
 gem 'figaro', '1.0'
+
+gem 'annotate'
