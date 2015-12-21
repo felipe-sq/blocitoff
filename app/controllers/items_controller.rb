@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    @item = @user.items.create(name: params[:name])
+    @item = @user.items.create(name: params[:item][:name])
 
     if @item.save!
       flash[:notice] = "Your item was successfully saved!"
