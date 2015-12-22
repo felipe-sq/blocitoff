@@ -2,9 +2,9 @@
   <div class="col-md-8">
     <% @user.items.each do |item| %>
     <ul>
-      <font size="4.5"><%= item.name %></font>
-      <%= link_to "", item, method: :delete, class: 'glyphicon glyphicon-ok' %>
-    </ul>
+      <li><font size="4.5"><%= item.name %></font>
+        <%= link_to "", item, method: :delete, class: 'glyphicon glyphicon-ok' %></li>
+      </ul>
     <% end %>
   </div>
 </div>
