@@ -6,6 +6,7 @@ class Item < ActiveRecord::Base
     created_at + DAYS_TO_COMPLETE_TASK.days
   end
 
+
 end
 
 # == Schema Information
