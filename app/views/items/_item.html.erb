@@ -3,6 +3,7 @@
     <% @user.items.each do |item| %>
       <div class='media', id="item-<%=item.id %>">
         <font size="4.5"><%= item.name %></font><%= link_to "", item, method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
+        <%= distance_of_time_in_words(item.created_at, item.created_at + 7.days) %>
       </div>
     <% end %>
   </div>
