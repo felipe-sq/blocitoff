@@ -18,10 +18,8 @@ class ItemsController < ApplicationController
 
     if @item.destroy
       flash[:notice] = "Item was deleted."
-    #  redirect_to user_path(current_user)
     else
       flash[:alert] = "Item couldn't be deleted. Please try again."
-    #  redirect_to user_path(current_user)
 
       respond_to do |format|
         format.html
