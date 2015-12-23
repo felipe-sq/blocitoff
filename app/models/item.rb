@@ -1,5 +1,10 @@
 class Item < ActiveRecord::Base
+  DAYS_TO_COMPLETE_TASK = 7
   belongs_to :user
+
+  def due_date
+    created_at + DAYS_TO_COMPLETE_TASK.days
+  end
 
 end
 
