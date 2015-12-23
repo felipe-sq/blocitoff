@@ -12,4 +12,19 @@ class ItemsController < ApplicationController
       redirect_to user_path(current_user)
     end
   end
+
+  def destroy
+    @item = Item.find(params[:id])
+
+    if @item.destroy
+      flash[:notice] = "Item was deleted."
+    else
+      flash[:alert] = "Item couldn't be deleted. Please try again."
+
+      respond_to do |format|
+        format.html
+        format.js
+      end
+    end
+  end
 end

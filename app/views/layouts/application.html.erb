@@ -28,9 +28,11 @@
     </ul>
   </div>
   </ul>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-<%= yield %>
-</div>
+  <div class="flash">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+  <%= yield %>
+  </div>
 </body>
 </html>
