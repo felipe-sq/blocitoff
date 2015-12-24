@@ -1,5 +1,9 @@
 class ItemsController < ApplicationController
 
+  def show
+    @item = Item.find(params[:id])
+  end
+
   def create
     @user = User.find(params[:user_id])
     @item = @user.items.create(name: params[:item][:name])
@@ -22,11 +26,10 @@ class ItemsController < ApplicationController
     else
       flash[:alert] = "Item couldn't be deleted. Please try again."
     #  redirect_to user_path(current_user)
-
-      respond_to do |format|
-        format.html
-        format.js
-      end
+    end
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 end
