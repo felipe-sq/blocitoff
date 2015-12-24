@@ -29,5 +29,4 @@ class ItemsController < ApplicationController
       end
     end
   end
-  end
 end
