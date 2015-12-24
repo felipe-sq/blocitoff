@@ -12,4 +12,4 @@
 <%= render partial: "items/form", locals: { user: @user, item: Item.new } %>
 <br>
 <h3>Pending Items</h3>
-<%= render partial: "items/item" || "There are no pending items." %>
+<%= render @items || "There are no pending items." %>
