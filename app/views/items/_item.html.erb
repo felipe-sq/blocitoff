@@ -1,9 +1,7 @@
 <div class="row">
   <div class="col-md-8">
-    <%# @items.each do |item| %>
-      <div class='media', id="#{item.id}">
+      <div class='media', id="item-<%= item.id %>">
         <font size="4.5"><%= item.name %></font><%= link_to "", item, class: 'glyphicon glyphicon-ok', method: :delete %>
       </div>
-    <%# end %>
   </div>
 </div>
